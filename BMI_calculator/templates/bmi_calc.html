@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<head>
+    <title>
+        BMI calculator
+    </title>
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css" integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style.css')}}">
+</head>
+<body>
+    <h1 class="header">
+        BMI Calculator
+    </h1>
+    <div class="main">
+        <form class="pure-form" method="POST" action="/">
+            Enter your weight<br>
+            <input type="text" name="weight"><br>
+            Enter your height<br>
+            <input type="text" name="height"><br>
+            <button class="button-success pure-button" type="submit" value="submit">submit</button>
+        </form>
+    </div>
+
+    <div class="main">
+        {% if bmi %}
+        <p>Your BMI is {{bmi}}</p>
+        {% endif%}
+    </div>
+    
+</body>
