@@ -1,0 +1,78 @@
+.header
+{
+    text-align: center;
+    color: rgb(202, 26, 26);
+    padding: 20px;
+}
+.form
+{
+    background-color: blanchedalmond;
+    text-align: center;
+    line-height: 1cm;
+    width: auto;
+}
+input
+{
+    width: auto;
+    border-radius: 5px;
+    height: 7mm;
+}
+
+.msg
+{
+    border-left: 20px solid rgb(0, 33, 139);
+    background-color: blanchedalmond;
+    padding: 10px;
+}
+.navbar
+{
+    background-color: rgb(155, 27, 27);
+    padding: 10px;
+}
+.navbar a
+{
+    padding: 10px;
+    text-decoration: none;
+    color: white;
+}
+.navbar a:hover
+{
+    color: black;
+    background-color: blanchedalmond;
+}
+.cont
+{
+text-align: center;
+background-color: blanchedalmond;
+font-style: italic;
+padding: 50px;
+}
+table
+{
+    text-align: center;
+    border-collapse: collapse;
+    width: max-content;
+    align-content: center;
+}
+table th
+{
+    background-color: crimson;
+    padding: 10px;
+}
+table td
+{
+    background-color: blanchedalmond;
+    padding: 10px;
+}
+.tab
+{
+    padding-left: 20px;
+    align-content: center;
+}
+.status
+{
+    text-align: right;
+    position: absolute;
+    right: 2em;
+    color:whitesmoke;
+}

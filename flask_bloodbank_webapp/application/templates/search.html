@@ -1,0 +1,67 @@
+{%include 'includes/header.html'%}
+
+<div class="navbar">
+    <a href="/">Home</a>
+    {% if session['user']==123 %}
+    <a href="/logout" >Log out</a>
+    {% else %}
+    <a href="/login" >Log in</a>
+    {% endif %}
+</div>
+
+{% with messages=get_flashed_messages() %}
+{% if messages %}
+<div class='msg'>
+    {% for message in messages %}
+      <p>{{ message }} </p> 
+    {% endfor %}
+</div> 
+{% endif %}
+{% endwith %}
+
+<div class="form">
+    <form action="" method="POST">
+        <label for="bloodgrp">Search by blood group</label>
+        <select name=bloodgrp required>
+            <option value="o positive">O +ve</option>
+            <option value="o negative">O -ve</option>
+            <option value="a positive">A +ve</option>
+            <option value="a positive">A -ve</option>
+            <option value="b positive">B +ve</option>
+            <option value="b positive">B -ve</option>
+            <option value="ab positive">AB +ve</option>
+            <option value="ab positive">AB -ve</option>
+        </select>
+        <button type="submit">search</button>
+    </form>
+    <br>
+    {% if session['user']==123 and session['usertype']=='admin' %}
+    <form action="" method="POST">
+        <label for="bbid">Search by BBID</label>
+        <input type="text" placeholder="Enter BBID.." name='bbid' required>
+        <button type="submit">search</button>
+    </form>
+    {% endif %}
+</div>
+{%if matches %}
+<div class="tab">
+    <table >
+        <tr>
+            <th>NAME</th>
+            <th>CONTACT</th>
+            <th>BLOOD GROUP</th>
+            <th>ADDRESS</th>
+            <th>AGE</th>
+        </tr>
+        {% for donors in matches %}
+        <tr>
+            <td>{{ donors['name'] }}</td>
+            <td>{{ donors['contact'] }}</td>
+            <td>{{ donors['bloodgroup'] }}</td>
+            <td>{{ donors['address'] }}</td>
+            <td>{{ donors['age'] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endif %}

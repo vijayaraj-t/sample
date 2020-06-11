@@ -1,0 +1,26 @@
+{%include 'includes/header.html'%}
+
+<div class="navbar">
+    <a href="/">Home</a>
+    {% if not session['user']==123 %}
+    <a href="/login">Login/Register</a>
+    {% endif %}
+    <a href="/search" >Search</a>
+    {% if session['user']==123 %}
+    <a href="/logout" >Log out</a>
+    {% endif %}
+</div>
+{% with messages=get_flashed_messages() %}
+{% if messages %}
+<div class='msg'>
+    {% for message in messages %}
+      <p>{{ message }} </p> 
+    {% endfor %}
+</div> 
+{% endif %}
+{% endwith %}
+<div class="cont">
+    <h3>To give blood you need neither extra strength nor extra food, and you will save a life.”
+        If you're a blood donor, you're a hero to someone !</h3>
+</div>
+

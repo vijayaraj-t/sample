@@ -1,0 +1,27 @@
+{%include 'includes/header.html'%}
+
+<div class="navbar">
+    <a href="/">Home</a>
+    <a href="/search" >Search</a>
+</div>
+
+    {% with messages=get_flashed_messages() %}
+        {% if messages %}
+        <div class='msg'>
+            {% for message in messages %}
+              <p>{{ message }} </p> 
+            {% endfor %}
+        </div> 
+        {% endif %}
+    {% endwith %}
+
+<div class='form'>
+    <h3>Login</h3>
+    <form action="" method="POST">
+
+        Email <input type="email" name=email required><br>
+        Password <input type="password" name=password required><br>
+        <button type="submit">Log in</button>
+        <a href='/signup'>Create new account </a>
+    </form>
+</div>

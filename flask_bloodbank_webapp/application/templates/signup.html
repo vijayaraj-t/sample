@@ -1,0 +1,53 @@
+{%include 'includes/header.html'%}
+
+<div class="navbar">
+    <a href="/">Home</a>
+    <a href="/search" >Search</a>
+</div>
+
+
+{% with messages=get_flashed_messages() %}
+{% if messages %}
+<div class='msg'>
+    {% for message in messages %}
+      <p>{{ message }} </p> 
+    {% endfor %}
+</div> 
+{% endif %}
+{% endwith %}
+
+
+<div class='form'>
+    <form action="" method="POST">
+        <h3>Create Account</h3>
+        Name: <input type="text" name="name" required><br>
+        Email: <input type="email" name="email" required><br>
+        Password: <input type="password" name="password" required><br>
+        Usertype <select name="usertype">
+                    <option value='user'>Normal</option>
+                    <option value='admin'>Admin</option>
+                </select><br>
+        <h4>Personal Details</h4>
+        Contact <input type="text" name="contact" required><br>
+        Address<input type="text" name="address" required><br>
+        Blood Group
+        <select name='bloodgrp' required>
+            <option value="o positive">O +ve</option>
+            <option value="o negative">O -ve</option>
+            <option value="a positive">A +ve</option>
+            <option value="a positive">A -ve</option>
+            <option value="b positive">B +ve</option>
+            <option value="b positive">B -ve</option>
+            <option value="ab positive">AB +ve</option>
+            <option value="ab positive">AB -ve</option>
+        </select>
+        Date of Birth<input type="date" name="dob" required><br>
+        Age<input type="number" name="age" required><br>
+        <h4>In case of Emergency contact</h4>
+        IOE name<input type="text" name="ioe_name" ><br>
+        IOE contact<input type="text" name="ioe_contact" ><br>
+        IOE relationship<input type="text" name="ioe_relationship" ><br>
+        <button type="submit">sign up</button>
+    </form>
+    
+</div>
