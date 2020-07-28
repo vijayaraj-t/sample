@@ -1,0 +1,48 @@
+{% include 'includes/header.html' %}
+{% include 'includes/navbar.html' %}
+<body>
+<div class="box">
+<h3>Edit customer details</h3>
+    <form name="form" method="POST" action="" >
+    <table>
+		<tr>
+			<td>Name</td>
+			<td><input type="text" name='name' value={{customer.name}} pattern="[A-Za-z ]+" title="Alphabets only"></td>
+			<td><input type="hidden" name='customerid' value={{customer.customerid}}></td>
+		</tr>
+		<tr>
+			<td>SSNid</td>
+			<td>{{customer.SSNid}}</td>
+			
+		</tr>
+		<tr>
+			<td>Customer id</td>
+			<td>{{customer.customerid}}</td>
+		</tr>
+		<tr>
+			<td>Age</td>
+			<td> <input type="number" name='age' value={{customer.age}} min=18 title='Age >=18'></td>
+		</tr>
+		<tr>
+			<td>Address</td>
+			<td><input type="text" name='address' value={{customer.address}}></td>
+		</tr>
+       	<tr>
+		   <td> City</td>
+	       <td><input type="text" name='city' value={{customer.city}}></td>
+		</tr>
+		<tr>
+			<td>State</td>
+			<td> <input type="text" name='state' value={{customer.state}}></td>
+		</tr>
+	</table>
+	<br>
+	<br>
+		<center>
+        <button type="submit" style="width:200px;height:50px;" ><h3>Modify Customer</h3></button>
+		</center>
+    </form>
+</div>
+</body>
+{% include 'includes/footer.html' %}
+

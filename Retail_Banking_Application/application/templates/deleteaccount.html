@@ -1,0 +1,28 @@
+{% include 'includes/header.html' %}
+{% include 'includes/navbar.html' %}
+{% include 'includes/footer.html' %}
+<body>
+<div class="box">
+<h2> Delete Account</h2>
+    <form method="POST" action="">
+        <table>
+            <tr>
+                <td>AccountID </td>
+        <td> <input type="number" name='accountid' min=100000000 max=999999999 title='9 digit required'></td>
+        </tr>
+        <tr>
+            <td>Account type</td>
+            <td><select name='accounttype' required>
+                <option value="savings">Savings</option>
+                <option value="current">Current</option>
+            </select></td>
+            </tr>
+            <tr><td style="padding-top: 20px;padding-left: 67px;">
+           
+                <button type="submit" style="width: 100px;"><h4>Delete Account</h4></button>
+                </td></tr>
+            </table>
+        </form>
+    </div>
+</body>
+

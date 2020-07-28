@@ -1,0 +1,19 @@
+{% include 'includes/header.html' %}
+{% include 'includes/navbar.html' %}
+<div>
+<form action="" method="POST">
+SSnid <input type="text" name='ssnid' min=100000000 max=999999999 title='9 digit required'><br>
+    <h1>OR</h1>
+Account id: <input type="text" name='aid' min=100000000 max=999999999 title='9 digit required'><br>
+<button type="submit">Search</button>
+</form>
+</div>
+{% if di %}
+<div class='msg'>
+  <p>Account ID: {{ di.aid }}</p>
+  <p>Customer ID: {{ di.cid }}</p>
+  <p>Account Type: {{ di.atype }}</p>
+  <p>Balance: {{ di.balance }}</p>
+</div>
+{% endif %}
+{% include 'includes/footer.html' %}

@@ -1,0 +1,60 @@
+<div class="navbar">
+  <a href="/home">Home</a>
+    {% if current_user.is_authenticated %}
+    <div class="dropdown">
+      <button class="dropbtn">Customer Management
+        <i class="fa fa-caret-down"></i>
+      </button>
+    <div class="dropdown-content">
+        <a href="/addcustomer">Add Customer</a>
+        <a href="/editcustomer">Edit Customer</a>
+        <a href="/deletecustomer">Delete Customer</a>
+    </div>
+    </div> 
+    <div class="dropdown">
+        <button class="dropbtn">Account Management
+          <i class="fa fa-caret-down"></i>
+        </button>
+    <div class="dropdown-content">
+        <a href="/createaccount">Create Account</a>
+        <a href="/deleteaccount">Delete Account</a> 
+    </div>
+    </div> 
+    <div class="dropdown">
+      <button class="dropbtn">Status Details
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="/customerstatus">Customer Status</a>
+        <a href="/accountstatus">Account Status</a>
+    </div>
+    </div>
+    <a href="/searchcustomer">Search Account</a> 
+    <div class="dropdown">
+      <button class="dropbtn">Account Operations
+        <i class="fa fa-caret-down"></i>
+      </button>
+    <div class="dropdown-content">
+        <a href="/deposit">Deposit Money</a>
+        <a href="/withdraw">Withdraw Money</a>
+        <a href="/transfer">Transfer Money</a>
+        <a href="/statement">Account Statement</a>
+    </div>
+    </div> 
+  <a href="/logout">logout</a>
+  {%else%}
+  <a href="/login">Login</a>
+  {% endif %}
+</div>
+{% with messages=get_flashed_messages() %}
+{% if messages %}
+<div class='msg'>
+  {% for message in messages %}
+    <p>{{ message }} </p> 
+  {% endfor %}
+</div> 
+{% endif %}
+{% endwith %}
+<div class="page-wrapper">
+ 
+</div>

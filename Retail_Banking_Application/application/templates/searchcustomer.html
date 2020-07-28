@@ -1,0 +1,32 @@
+{% include 'includes/header.html' %}
+{% include 'includes/navbar.html' %}
+<body>
+<div class="box">
+<h2>Search customer Account</h2>
+    <form method="POST" action="">
+       <table>
+           <tr>
+               <td>Enter Customerid</td>
+               <td><input type="number" required name='cid' min=100000000 max=999999999 title='9 digit required'></td>
+           </tr>
+           <tr><td style="padding-top: 20px;padding-left: 67px;">
+           
+        <button type="submit" style="width:100px;height:30px;"><h4>Find Customer</h4></button>
+        </td></tr>
+    </form>
+    <form method="POST" action="">
+        <table>
+            <tr>
+                <td>Enter Account id</td>
+                <td><input type="number" required name='aid' min=100000000 max=999999999 title='9 digit required'></td>
+            </tr>
+            <tr><td style="padding-top: 20px;padding-left: 67px;">
+            
+         <button type="submit" style="width:100px;height:30px;"><h4>Find Customer</h4></button>
+         </td></tr>
+     </form>
+    
+    </table>
+</div>
+</body>
+{% include 'includes/footer.html' %}

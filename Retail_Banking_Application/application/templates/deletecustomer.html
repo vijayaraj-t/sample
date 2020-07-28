@@ -1,0 +1,55 @@
+{% include 'includes/header.html' %}
+{% include 'includes/navbar.html' %}
+<body>
+    <script>
+        function fn()
+        {
+            confirm('Confirm Delete')
+        }
+    </script>
+<div class="box">
+<h2>Confirm Delete </h2>
+
+    <form name="form" method="POST" action="" >
+    <table>
+		<tr>
+			<td>Name</td>
+			<td>{{customer.name}}</td>
+			<td><input type="hidden" name='customerid' value={{customer.customerid}}></td>
+		</tr>
+		<tr>
+			<td>SSNid</td>
+			<td>{{customer.SSNid}}</td>
+			
+		</tr>
+		<tr>
+			<td>Customer id</td>
+			<td>{{customer.customerid}}</td>
+		</tr>
+		<tr>
+			<td>Age</td>
+			<td>{{customer.age}}</td>
+		</tr>
+		<tr>
+			<td>Address</td>
+			<td>{{customer.address}}</td>
+		</tr>
+       	<tr>
+		   <td> City</td>
+	       <td>{{customer.city}}</td>
+		</tr>
+		<tr>
+			<td>State</td>
+			<td>{{customer.state}}</td>
+		</tr>
+	</table>
+	<br>
+	<br>
+		<center>
+        <button type="submit" onclick=fn() style="width:200px;height:50px;" ><h3>Delete</h3></button>
+		</center>
+    </form>
+</div>
+</body>
+{% include 'includes/footer.html' %}
+

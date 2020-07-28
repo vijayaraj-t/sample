@@ -1,0 +1,36 @@
+{% include 'includes/header.html' %}
+{% include 'includes/navbar.html' %}
+<body>
+<div class="box">
+<h2> Create Account</h2>
+
+    <form method="POST" action="">
+        <table>
+            <tr>
+                <td>Customerid </td>
+                <td><input type="number" name='customerid' min=100000000 max=999999999 title='9 digit required' required></td>
+            </tr>
+            <tr>
+                <td>AccountId </td>
+                <td><input type="number" name='accountid' min=100000000 max=999999999 title='9 digit required' required></td>
+            </tr>
+        <tr>
+        <td>Account type</td>
+        <td><select name='accounttype' required>
+            <option value="savings">Savings</option>
+            <option value="current">Current</option>
+        </select></td>
+        </tr>
+        <tr>
+        <td>Deposit Amount</td> 
+        <td><input type="number" name='depositamount' min=1000 title='Min Rs.1000 required to create account' required></td>
+        </tr>
+        <tr><td style="padding-top: 20px;padding-left: 67px;">
+           
+            <button type="submit" style="width: 100px;"><h4>Create Account</h4></button>
+            </td></tr>
+        </table>
+    </form>
+</div>
+</body>
+{% include 'includes/footer.html' %}

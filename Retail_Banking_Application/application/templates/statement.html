@@ -1,0 +1,34 @@
+{% include 'includes/header.html' %}
+{% include 'includes/navbar.html' %}
+
+<div class="box">
+    <h3 style="color: white;text-align: center;">Account Statement</h3>
+    <form name="form" action="" method="POST">
+      <div class="inputbox">
+        <input type="number" name='accountid' required="" autofocus autocomplete="off" min=100000000 max=999999999 title='9 digit required'>
+        <label>Account Id</label>
+      </div>
+      <p style="color: white;">Enter From and To date</p>
+      <div class="inputbox">
+         <input type="date" name='fdate' required="" >
+         <label></label>
+    </div>
+    <div class="inputbox">
+            <input type="date" name='tdate' required="" >
+    </div>
+    
+          <button type="submit" style="width:200px;height:50px;margin-left: 60px;" ><h3>Get statement</h3></button>
+    </form>
+    <form name="form" action="" method="POST">
+      <div class="inputbox">
+        <input type="number" name='accountid' required="" autofocus autocomplete="off" min=100000000 max=999999999 title='9 digit required'>
+        <label>Account Id</label>
+      </div>
+      <div class="inputbox">
+        <input type="number" name='nots' required="" autofocus autocomplete="off">
+        <label>Last n Transactions</label>
+      </div>
+      <button type="submit" style="width:200px;height:50px;margin-left: 60px;" ><h3>Get statement</h3></button>
+    </form>
+    </div>
+{% include 'includes/footer.html' %}

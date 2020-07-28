@@ -1,0 +1,24 @@
+{% include 'includes/header.html' %}
+{% include 'includes/navbar.html' %}
+<body style="min-height: 0%;">
+    <table id="customers" class="box">
+        <tr>
+             <th>AccountId</th>
+             <th>Amount</th>
+            <th>Message</th>
+            <th>Date</th>
+        </tr>
+        {% for transaction in transactions %}
+        <tr>
+            <td>{{transaction.accountid}}</td>
+            <td>{{transaction.amount}}</td>
+            <td>{{transaction.msg}}</td>
+            <td>{{transaction.date.strftime("%Y-%m-%d %H:%M:%S")}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <div style="text-align: center;padding-bottom: 10PX;">
+        <button style="padding: 10px 20px;border-radius: 3px;background-color: black;color: white;" onclick="window.print()">Print statement</button><br>
+    </div>
+    </body>
+{% include 'includes/footer.html' %}

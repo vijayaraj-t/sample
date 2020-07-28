@@ -1,0 +1,51 @@
+{% include 'includes/header.html' %}
+{% include 'includes/navbar.html' %}
+<body>
+<div class="box">
+<h2>Add new Customer</h2>
+
+    <form name="form" method="POST" action="" >
+    <table>
+		<tr>
+			<td>Name</td>
+			<td><input type="text" name='name' required pattern=[A-Za-z]+ title="Alphabets only"></td>
+		</tr>
+		<tr>
+			<td>SSNid</td>
+			<td><input type="number" required min=100000000 max=999999999 title='9 digit required' name='SSNid'></td>
+		</tr>
+		<tr>
+			<td>Customer id</td>
+			<td><input type="number" name='customerid' min=100000000 max=999999999 title='9 digit required' required></td>
+		</tr>
+		<tr>
+			<td>Age</td>
+			<td> <input type="number" name='age' min=18 title='Age>=18' required></td>
+		</tr>
+		<tr>
+			<td>Address line 1</td>
+			<td><input type="text" name='addr1' required></td>
+		</tr>
+		<tr>
+			<td>Address line 2</td>
+			<td> <input type="text" name='addr2' required></td>
+		</tr>
+       	<tr>
+		   <td> City</td>
+	       <td><input type="text" name='city' required></td>
+		</tr>
+		<tr>
+			<td>State</td>
+			<td> <input type="text" name='state' required></td>
+		</tr>
+	</table>
+	<br>
+	<br>
+		<center>
+        <button type="submit" style="width:200px;height:50px;" ><h3>Add Customer</h3></button>
+		</center>
+    </form>
+</div>
+</body>
+{% include 'includes/footer.html' %}
+

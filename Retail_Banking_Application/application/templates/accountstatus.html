@@ -1,0 +1,29 @@
+{% include 'includes/header.html' %}
+{% include 'includes/navbar.html' %}
+<body>
+    <table id="customers" class="box">
+       <tr>
+           <th>CustomerId</th>
+            <th>Account Id</th>
+           <th>Account type</th>
+           <th>Status</th>
+           <th>Message</th>
+           <th>Last updated</th>
+           <th>operations</th>
+       </tr>
+       {% for account in accounts %}
+       <tr>
+           <td>{{account.customerid}}</td>
+           <td>{{account.accountid}}</td>
+           <td>{{account.accounttype}}</td>
+           <td>{{account.status}}</td>
+           <td>{{account.message}}</td>
+           <td>{{account.lastupdated.strftime("%Y-%m-%d %H:%M:%S")}}</td>
+           <td><a href="#">Refresh</a></td>
+       </tr>
+       {% endfor %}
+   </table>
+
+</body>
+</html>
+{% include 'includes/footer.html' %}

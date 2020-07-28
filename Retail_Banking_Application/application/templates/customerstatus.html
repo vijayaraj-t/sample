@@ -1,0 +1,34 @@
+{% include 'includes/header.html' %}
+{% include 'includes/navbar.html' %}
+<body style="min-height: 0%;"></body>
+    <table id="customers" class="box">
+       <tr>
+           <th>CustomerId</th>
+            <th>SSNid</th>
+           <th>Status</th>
+           <th>Message</th>
+           <th>Last updated</th>
+           <th>operations</th>
+           <th>view profile</th>
+       </tr>
+       {% for customer in customers %}
+       <tr>
+           <td>{{customer.customerid}}</td>
+           <td>{{customer.SSNid}}</td>
+           <td>{{customer.status}}</td>
+           <td>{{customer.message}}</td>
+           <td>{{customer.lastupdated.strftime("%Y-%m-%d %H:%M:%S")}}</td>
+           <td><a href="#">Refresh</a></td>
+           <td>
+            <form action="{{ url_for('viewcustomer')}}" method="POST">
+                    <input type="hidden" name="customerid" value={{customer.customerid}}>
+                    <button>View Profile</button>
+            </form>
+        </td>
+       </tr>
+       {% endfor %}
+   </table>
+
+</body>
+</html>
+{% include 'includes/footer.html' %}

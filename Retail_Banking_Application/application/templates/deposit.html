@@ -1,0 +1,20 @@
+{% include 'includes/header.html' %}
+{% include 'includes/navbar.html' %}
+<div class="box">
+    <h2>Deposit</h2>
+    
+    <form name="form" action="" method="POST">
+      <div class="inputbox">
+        <input type="number" name='accountid' required="" autofocus autocomplete="off" min=100000000 max=999999999 title='9 digit required'>
+        <label>Account Id</label>
+      </div>
+      <div class="inputbox">
+         <input type="number" name='amount' required="" min=1 title="Should be >0 ">
+         <label>Amount</label>
+        </div>
+    
+          <button type="submit" style="width:200px;height:50px;margin-left: 60px;" ><h3>Deposit amount</h3></button>
+    
+    </form>
+    </div>
+{% include 'includes/footer.html' %}
